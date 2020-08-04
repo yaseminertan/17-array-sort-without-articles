@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content"></div>
+  </body>
+  <style>
+    body {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      background-color: aquamarine;
+    }
+  </style>
+  <script>
+    const bands = [
+      "The Plot in You",
+      "The Devil Wears Prada",
+      "Pierce the Veil",
+      "Norma Jean",
+      "The Bled",
+      "Say Anything",
+      "The Midway State",
+      "We Came as Romans",
+      "Counterparts",
+      "Oh, Sleeper",
+      "A Skylit Drive",
+      "Anywhere But Here",
+      "An Old Dog",
+    ];
+
+    const content = document.querySelector(".content");
+    const trimmed = bands.forEach((item) => {
+      return item.replace(`(^(a |an |the )/i),''`);
+    });
+  </script>
+</html>
