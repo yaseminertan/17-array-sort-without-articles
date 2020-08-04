@@ -6,7 +6,10 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="content"></div>
+    <div class="content">
+      <h3>BANDS</h3>
+      <ul class="list"></ul>
+    </div>
   </body>
   <style>
     body {
@@ -34,9 +37,15 @@
       "An Old Dog",
     ];
 
-    const content = document.querySelector(".content");
-    const trimmed = bands.forEach((item) => {
-      return item.replace(`(^(a |an |the )/i),''`);
+    const list = document.querySelector(".list");
+    const trimmed = [];
+
+    bands.forEach((item) => {
+      trimmed.push(item.replace(/^(a |an |the )/i, ""));
     });
+
+    const sorted = trimmed.sort((a, b) => (a > b ? 1 : -1));
+
+    list.innerHTML = sorted.map((band) => `<li>${band}</li>`).join("");
   </script>
 </html>
